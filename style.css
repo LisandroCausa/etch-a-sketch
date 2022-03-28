@@ -1,0 +1,11 @@
+#canvas {
+    display: flex;
+    justify-content: center;
+}
+
+.row > div {
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+
+}
