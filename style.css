@@ -1,14 +1,37 @@
+body {
+    margin: 0;
+    background-color: rgb(230, 230, 230);
+}
+
 header {
     text-align: center;
+    margin: 24px 0;
+}
+
+header > button {
+    
+    font-weight: 900;
+    font-size: 24px;
+    background-color: rgb(238, 87, 87);
+    color: white;
 }
 
 #canvas {
     display: flex;
-    justify-content: center;
+    border: 3px solid rgb(25, 25, 25);
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .row > div {
-    height: 50px;
-    width: 50px;
-    background-color: rgb(241, 241, 241);
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
 }
