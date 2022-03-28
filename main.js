@@ -1,6 +1,3 @@
-const NORMAL_COLOR = 'rgb(75, 75, 75)';
-const HOVER_COLOR = 'rgb(241, 241, 241)';
-
 const canvas = document.createElement('div');
 canvas.id = 'canvas';
 const newCanvasButton = document.querySelector('#new-canvas-btn');
@@ -39,10 +36,7 @@ function initCanvas(size) {
             const div = document.createElement('div');
             row.appendChild(div);
             div.addEventListener('mouseover', () => 
-                div.style.backgroundColor = NORMAL_COLOR
-            );
-            div.addEventListener('mouseleave', () => 
-                div.style.backgroundColor = HOVER_COLOR
+                div.style.backgroundColor = 'black'
             );
         }
         canvas.appendChild(row);
