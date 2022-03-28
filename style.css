@@ -1,3 +1,7 @@
+header {
+    text-align: center;
+}
+
 #canvas {
     display: flex;
     justify-content: center;
@@ -6,6 +10,5 @@
 .row > div {
     height: 50px;
     width: 50px;
-    background-color: aqua;
-
+    background-color: rgb(241, 241, 241);
 }

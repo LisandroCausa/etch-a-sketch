@@ -1,17 +1,52 @@
-const canvas = document.querySelector('#canvas');
+const NORMAL_COLOR = 'rgb(75, 75, 75)';
+const HOVER_COLOR = 'rgb(241, 241, 241)';
 
-function initCanvas(sizeX = 16, sizeY = 16){
-    for(let i = 0; i < sizeX; i++)
+const canvas = document.createElement('div');
+canvas.id = 'canvas';
+const newCanvasButton = document.querySelector('#new-canvas-btn');
+
+function deleteCanvas(){
+    while(canvas.hasChildNodes())
     {
-        const container = document.createElement('div');
-        container.classList.add('row');
-        for(let k = 0; k < sizeY; k++)
-        {
-            const div = document.createElement('div');
-            container.appendChild(div);
-        }
-        canvas.appendChild(container);
+        canvas.removeChild(canvas.firstChild);
+    }
+
+    if(document.body.querySelector('#canvas') != null)
+    {
+        document.body.removeChild(canvas);
     }
 }
 
-initCanvas();
+function newCanvas(){
+    deleteCanvas();
+
+    let size = prompt('Size:');
+    size = Number(size);
+    if(size > 100)
+        size = 100;
+
+    initCanvas(size);
+}
+
+function initCanvas(size) {
+    document.body.appendChild(canvas);
+    for(let i = 0; i < size; i++)
+    {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        for(let k = 0; k < size; k++)
+        {
+            const div = document.createElement('div');
+            row.appendChild(div);
+            div.addEventListener('mouseover', () => 
+                div.style.backgroundColor = NORMAL_COLOR
+            );
+            div.addEventListener('mouseleave', () => 
+                div.style.backgroundColor = HOVER_COLOR
+            );
+        }
+        canvas.appendChild(row);
+    }
+}
+
+newCanvasButton.addEventListener('click', newCanvas);
