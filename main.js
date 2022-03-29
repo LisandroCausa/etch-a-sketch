@@ -17,7 +17,7 @@ function deleteCanvas(){
 function newCanvas(){
     deleteCanvas();
 
-    let size = prompt('Size:');
+    let size = prompt('Enter the size');
     size = Number(size);
     if(size > 100)
         size = 100;
